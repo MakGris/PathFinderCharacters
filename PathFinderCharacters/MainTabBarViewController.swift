@@ -12,18 +12,21 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        viewControllers = [generateViewController(viewController: WeaponsViewController(), image: UIImage(named: "axes")!, title: "Оружие")]
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func generateViewController(
+        viewController: UIViewController,
+        image: UIImage,
+        title: String) -> UIViewController {
+            let navigationVC = UINavigationController(rootViewController: viewController)
+            navigationVC.tabBarItem.image = image
+            navigationVC.tabBarItem.title = title
+            viewController.navigationItem.title = title
+            navigationVC.navigationBar.prefersLargeTitles = true
+            return navigationVC
     }
-    */
 
 }

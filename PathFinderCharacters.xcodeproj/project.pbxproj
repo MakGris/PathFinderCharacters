@@ -14,6 +14,7 @@
 		D589FEE629700FDD0078C98A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D589FEE529700FDD0078C98A /* Assets.xcassets */; };
 		D589FEE929700FDD0078C98A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D589FEE729700FDD0078C98A /* LaunchScreen.storyboard */; };
 		D589FEF1297018B30078C98A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FEF0297018B30078C98A /* MainTabBarViewController.swift */; };
+		D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59925682972E0340045B85B /* WeaponsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D589FEE829700FDD0078C98A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D589FEEA29700FDD0078C98A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D589FEF0297018B30078C98A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		D59925682972E0340045B85B /* WeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				D589FEDB29700FDC0078C98A /* SceneDelegate.swift */,
 				D589FEDD29700FDC0078C98A /* ViewController.swift */,
 				D589FEF0297018B30078C98A /* MainTabBarViewController.swift */,
+				D59925682972E0340045B85B /* WeaponsViewController.swift */,
 				D589FEE529700FDD0078C98A /* Assets.xcassets */,
 				D589FEE729700FDD0078C98A /* LaunchScreen.storyboard */,
 				D589FEEA29700FDD0078C98A /* Info.plist */,
@@ -144,6 +147,7 @@
 				D589FEDE29700FDC0078C98A /* ViewController.swift in Sources */,
 				D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */,
 				D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */,
+				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
 				D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
