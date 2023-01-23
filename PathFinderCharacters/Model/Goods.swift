@@ -16,6 +16,7 @@ struct Weapon {
     let distance: String
     let price: String
     let type: String
+    let grip: String
     let damage: String
     let criticalDamage: String
     let description: String

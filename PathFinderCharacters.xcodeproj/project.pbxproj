@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB49A2976B30E007DEA79 /* Goods.swift */; };
-		D55FB4A12976B713007DEA79 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB4A02976B713007DEA79 /* DataManager.swift */; };
+		D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */; };
 		D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FED929700FDC0078C98A /* AppDelegate.swift */; };
 		D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FEDB29700FDC0078C98A /* SceneDelegate.swift */; };
 		D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D589FEE229700FDC0078C98A /* PathFinderCharacters.xcdatamodeld */; };
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		D55FB49A2976B30E007DEA79 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
-		D55FB4A02976B713007DEA79 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataManager.swift; sourceTree = "<group>"; };
 		D589FED629700FDC0078C98A /* PathFinderCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathFinderCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589FED929700FDC0078C98A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D589FEDB29700FDC0078C98A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		D55FB49F2976B6E7007DEA79 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D55FB4A02976B713007DEA79 /* DataManager.swift */,
+				D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 				D589FEF1297018B30078C98A /* MainTabBarViewController.swift in Sources */,
 				D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */,
 				D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */,
-				D55FB4A12976B713007DEA79 /* DataManager.swift in Sources */,
+				D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */,
 				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,
 				D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */,
