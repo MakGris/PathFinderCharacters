@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D51A025729813F3D007690D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A025629813F3D007690D5 /* Constants.swift */; };
 		D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB49A2976B30E007DEA79 /* Goods.swift */; };
 		D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */; };
 		D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FED929700FDC0078C98A /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D51A025629813F3D007690D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D55FB49A2976B30E007DEA79 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataManager.swift; sourceTree = "<group>"; };
 		D589FED629700FDC0078C98A /* PathFinderCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathFinderCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,13 +110,13 @@
 		D589FED829700FDC0078C98A /* PathFinderCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				D5D59EA129811B470057578D /* Helpers */,
 				D55FB49E2976B6A3007DEA79 /* App */,
 				D5D59E9E298114FC0057578D /* View */,
 				D55FB49D2976B65B007DEA79 /* ViewControllers */,
 				D55FB49F2976B6E7007DEA79 /* Services */,
 				D55FB4992976B2D7007DEA79 /* Model */,
 				D55FB49C2976B64D007DEA79 /* Resources */,
+				D5D59EA129811B470057578D /* Helpers */,
 				D589FEE729700FDD0078C98A /* LaunchScreen.storyboard */,
 				D589FEE229700FDC0078C98A /* PathFinderCharacters.xcdatamodeld */,
 				D589FEEA29700FDD0078C98A /* Info.plist */,
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D5D59EA229811B620057578D /* Constraints.swift */,
+				D51A025629813F3D007690D5 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */,
 				D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */,
 				D5D59EA329811B620057578D /* Constraints.swift in Sources */,
+				D51A025729813F3D007690D5 /* Constants.swift in Sources */,
 				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
 				D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,
