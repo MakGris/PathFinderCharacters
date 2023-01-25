@@ -16,6 +16,8 @@
 		D589FEE929700FDD0078C98A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D589FEE729700FDD0078C98A /* LaunchScreen.storyboard */; };
 		D589FEF1297018B30078C98A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FEF0297018B30078C98A /* MainTabBarViewController.swift */; };
 		D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59925682972E0340045B85B /* WeaponsViewController.swift */; };
+		D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D59E9F298115E10057578D /* WeaponCell.swift */; };
+		D5D59EA329811B620057578D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D59EA229811B620057578D /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		D589FEEA29700FDD0078C98A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D589FEF0297018B30078C98A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		D59925682972E0340045B85B /* WeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsViewController.swift; sourceTree = "<group>"; };
+		D5D59E9F298115E10057578D /* WeaponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCell.swift; sourceTree = "<group>"; };
+		D5D59EA229811B620057578D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,9 @@
 		D589FED829700FDC0078C98A /* PathFinderCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				D5D59EA129811B470057578D /* Helpers */,
 				D55FB49E2976B6A3007DEA79 /* App */,
+				D5D59E9E298114FC0057578D /* View */,
 				D55FB49D2976B65B007DEA79 /* ViewControllers */,
 				D55FB49F2976B6E7007DEA79 /* Services */,
 				D55FB4992976B2D7007DEA79 /* Model */,
@@ -114,6 +120,22 @@
 				D589FEEA29700FDD0078C98A /* Info.plist */,
 			);
 			path = PathFinderCharacters;
+			sourceTree = "<group>";
+		};
+		D5D59E9E298114FC0057578D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5D59E9F298115E10057578D /* WeaponCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5D59EA129811B470057578D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D5D59EA229811B620057578D /* Constraints.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +212,9 @@
 				D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */,
 				D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */,
 				D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */,
+				D5D59EA329811B620057578D /* Constraints.swift in Sources */,
 				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
+				D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,
 				D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */,
 			);
