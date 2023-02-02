@@ -33,6 +33,17 @@ class WeaponCell: UITableViewCell {
         return imageView
     }()
     
+    //    MARK: - Text layer
+    
+    let textLayerView: UITextView = {
+        let textView = UITextView()
+        textView.textColor = .black
+        textView.font = .systemFont(ofSize: 10)
+        textView.text = "Тест Тест Тест Тест"
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
     //    MARK: - Top layer
     
     let topLayerView: UIView = {
@@ -47,6 +58,17 @@ class WeaponCell: UITableViewCell {
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+    
+    let nameViewTextLabel: UILabel = {
+       let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.text = "Одноручный меч + 1fdfsdfsdfsdfsdfsdfsdfsdf"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+       return label
     }()
     
     let distanceHeaderView: UIView = {
@@ -107,6 +129,49 @@ class WeaponCell: UITableViewCell {
         return view
     }()
     
+    //    MARK: - Bottom Header layer
+    
+    let bottomHeaderLayerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let priceHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let gripHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let typeHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let damageHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let criticalDamageHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -115,10 +180,12 @@ class WeaponCell: UITableViewCell {
         setupWeaponImageView()
         setupTopLayerView()
         setupBottomLayerView()
+        setupBottomHeaderlayerView()
+        setupTextViewLayer()
         
     }
     
-    //    MARK: - Bottom Header layer
+    
     
     
     
@@ -145,6 +212,7 @@ class WeaponCell: UITableViewCell {
     func setupTopLayerView() {
         firstLayerView.addSubview(topLayerView)
         topLayerView.addSubview(nameView)
+        nameView.addSubview(nameViewTextLabel)
         topLayerView.addSubview(distanceHeaderView)
         topLayerView.addSubview(distanceView)
         
@@ -157,6 +225,11 @@ class WeaponCell: UITableViewCell {
         nameView.leadingAnchor.constraint(equalTo: topLayerView.leadingAnchor).isActive = true
         nameView.heightAnchor.constraint(equalTo: topLayerView.heightAnchor).isActive = true
         nameView.widthAnchor.constraint(equalTo: topLayerView.widthAnchor, multiplier: 5 / 7).isActive = true
+        
+        nameViewTextLabel.leadingAnchor.constraint(equalTo: nameView.leadingAnchor).isActive = true
+        nameViewTextLabel.trailingAnchor.constraint(equalTo: nameView.trailingAnchor).isActive = true
+        nameViewTextLabel.centerXAnchor.constraint(equalTo: nameView.centerXAnchor).isActive = true
+        nameViewTextLabel.centerYAnchor.constraint(equalTo: nameView.centerYAnchor).isActive = true
         
         distanceHeaderView.topAnchor.constraint(equalTo: topLayerView.topAnchor).isActive = true
         distanceHeaderView.heightAnchor.constraint(equalTo: topLayerView.heightAnchor, multiplier: 1 / 2).isActive = true
@@ -185,27 +258,77 @@ class WeaponCell: UITableViewCell {
         priceView.leadingAnchor.constraint(equalTo: bottomLayerView.leadingAnchor).isActive = true
         priceView.topAnchor.constraint(equalTo: bottomLayerView.topAnchor).isActive = true
         priceView.bottomAnchor.constraint(equalTo: bottomLayerView.bottomAnchor).isActive = true
-        priceView.widthAnchor.constraint(equalTo: topLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
+        priceView.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
         
         gripView.leadingAnchor.constraint(equalTo: priceView.trailingAnchor, constant: 1).isActive = true
         gripView.topAnchor.constraint(equalTo: bottomLayerView.topAnchor).isActive = true
         gripView.bottomAnchor.constraint(equalTo: bottomLayerView.bottomAnchor).isActive = true
-        gripView.widthAnchor.constraint(equalTo: topLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
+        gripView.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
         
         typeView.leadingAnchor.constraint(equalTo: gripView.trailingAnchor, constant: 1).isActive = true
         typeView.topAnchor.constraint(equalTo: bottomLayerView.topAnchor).isActive = true
         typeView.bottomAnchor.constraint(equalTo: bottomLayerView.bottomAnchor).isActive = true
-        typeView.widthAnchor.constraint(equalTo: topLayerView.widthAnchor, multiplier: 2 / 7).isActive = true
+        typeView.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 2 / 7).isActive = true
         
         damageView.leadingAnchor.constraint(equalTo: typeView.trailingAnchor, constant: 1).isActive = true
         damageView.topAnchor.constraint(equalTo: bottomLayerView.topAnchor).isActive = true
         damageView.bottomAnchor.constraint(equalTo: bottomLayerView.bottomAnchor).isActive = true
-        damageView.widthAnchor.constraint(equalTo: topLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
+        damageView.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
         
         criticalDamageView.leadingAnchor.constraint(equalTo: damageView.trailingAnchor, constant: 1).isActive = true
         criticalDamageView.topAnchor.constraint(equalTo: bottomLayerView.topAnchor).isActive = true
         criticalDamageView.bottomAnchor.constraint(equalTo: bottomLayerView.bottomAnchor).isActive = true
-        criticalDamageView.widthAnchor.constraint(equalTo: topLayerView.widthAnchor, multiplier: 2 / 7).isActive = true
+        criticalDamageView.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 2 / 7).isActive = true
+        
+    }
+    
+    func setupBottomHeaderlayerView() {
+        firstLayerView.addSubview(bottomHeaderLayerView)
+        bottomHeaderLayerView.addSubview(priceHeaderView)
+        bottomHeaderLayerView.addSubview(gripHeaderView)
+        bottomHeaderLayerView.addSubview(typeHeaderView)
+        bottomHeaderLayerView.addSubview(damageHeaderView)
+        bottomHeaderLayerView.addSubview(criticalDamageHeaderView)
+        
+        bottomHeaderLayerView.leadingAnchor.constraint(equalTo: bottomLayerView.leadingAnchor).isActive = true
+        bottomHeaderLayerView.trailingAnchor.constraint(equalTo: bottomLayerView.trailingAnchor).isActive = true
+        bottomHeaderLayerView.bottomAnchor.constraint(equalTo: bottomLayerView.topAnchor).isActive = true
+        bottomHeaderLayerView.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 2 / 4).isActive = true
+        
+        priceHeaderView.leadingAnchor.constraint(equalTo: priceView.leadingAnchor).isActive = true
+        priceHeaderView.topAnchor.constraint(equalTo: bottomHeaderLayerView.topAnchor).isActive = true
+        priceHeaderView.bottomAnchor.constraint(equalTo: bottomHeaderLayerView.bottomAnchor).isActive = true
+        priceHeaderView.widthAnchor.constraint(equalTo: bottomHeaderLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
+        
+        gripHeaderView.leadingAnchor.constraint(equalTo: priceHeaderView.trailingAnchor, constant: 1).isActive = true
+        gripHeaderView.topAnchor.constraint(equalTo: bottomHeaderLayerView.topAnchor).isActive = true
+        gripHeaderView.bottomAnchor.constraint(equalTo: bottomHeaderLayerView.bottomAnchor).isActive = true
+        gripHeaderView.widthAnchor.constraint(equalTo: bottomHeaderLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
+        
+        typeHeaderView.leadingAnchor.constraint(equalTo: gripHeaderView.trailingAnchor, constant: 1).isActive = true
+        typeHeaderView.topAnchor.constraint(equalTo: bottomHeaderLayerView.topAnchor).isActive = true
+        typeHeaderView.bottomAnchor.constraint(equalTo: bottomHeaderLayerView.bottomAnchor).isActive = true
+        typeHeaderView.widthAnchor.constraint(equalTo: bottomHeaderLayerView.widthAnchor, multiplier: 2 / 7).isActive = true
+        
+        damageHeaderView.leadingAnchor.constraint(equalTo: typeHeaderView.trailingAnchor, constant: 1).isActive = true
+        damageHeaderView.topAnchor.constraint(equalTo: bottomHeaderLayerView.topAnchor).isActive = true
+        damageHeaderView.bottomAnchor.constraint(equalTo: bottomHeaderLayerView.bottomAnchor).isActive = true
+        damageHeaderView.widthAnchor.constraint(equalTo: bottomHeaderLayerView.widthAnchor, multiplier: 1 / 7).isActive = true
+        
+        criticalDamageHeaderView.leadingAnchor.constraint(equalTo: damageHeaderView.trailingAnchor, constant: 1).isActive = true
+        criticalDamageHeaderView.topAnchor.constraint(equalTo: bottomHeaderLayerView.topAnchor).isActive = true
+        criticalDamageHeaderView.bottomAnchor.constraint(equalTo: bottomHeaderLayerView.bottomAnchor).isActive = true
+        criticalDamageHeaderView.widthAnchor.constraint(equalTo: bottomHeaderLayerView.widthAnchor, multiplier: 2 / 7).isActive = true
+    }
+    
+    func setupTextViewLayer() {
+        firstLayerView.addSubview(textLayerView)
+        
+        textLayerView.leadingAnchor.constraint(equalTo: weaponImageView.trailingAnchor).isActive = true
+        textLayerView.trailingAnchor.constraint(equalTo: firstLayerView.trailingAnchor).isActive = true
+        textLayerView.topAnchor.constraint(equalTo: topLayerView.bottomAnchor).isActive = true
+        textLayerView.bottomAnchor.constraint(equalTo: bottomHeaderLayerView.topAnchor).isActive = true
+//        textLayerView.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 2 / 4).isActive = true
         
     }
 }
