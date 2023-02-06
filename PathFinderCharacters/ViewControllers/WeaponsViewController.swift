@@ -8,7 +8,7 @@
 import UIKit
 
 class WeaponsViewController: UITableViewController {
-
+let titleHeaders = ["Простое оружие", "Особое оружие"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(WeaponCell.self, forCellReuseIdentifier: WeaponCell.reuseId)
@@ -21,13 +21,15 @@ class WeaponsViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titleHeaders[section]
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return 1
     }
     
