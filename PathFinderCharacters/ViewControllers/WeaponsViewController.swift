@@ -13,6 +13,8 @@ private let titleHeaders = ["Простое оружие", "Особое ору�
     private var weapons = Weapon.getWeapons()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewWeapon))
+        tableView.separatorStyle = .none
         tableView.register(WeaponCell.self, forCellReuseIdentifier: WeaponCell.reuseId)
     }
 
@@ -54,4 +56,9 @@ private let titleHeaders = ["Простое оружие", "Особое ору�
         200
     }
 
+}
+extension WeaponsViewController {
+    @objc func addNewWeapon() {
+        
+    }
 }

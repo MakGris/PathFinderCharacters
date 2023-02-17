@@ -83,7 +83,7 @@ class WeaponCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "дистанция"
+        label.text = Constants.distanceHeaderLabel
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -221,7 +221,7 @@ class WeaponCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "цена"
+        label.text = Constants.priceHeaderLabel
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -239,7 +239,7 @@ class WeaponCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "хват"
+        label.text = Constants.gripHeaderLabel
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -257,7 +257,7 @@ class WeaponCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "тип"
+        label.text = Constants.typeHeaderLabel
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -275,7 +275,7 @@ class WeaponCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "урон"
+        label.text = Constants.damageHeaderLabel
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -293,7 +293,7 @@ class WeaponCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "крит. удар"
+        label.text = Constants.criticalDamageHeaderLabel
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
