@@ -17,6 +17,8 @@
 		D589FEE929700FDD0078C98A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D589FEE729700FDD0078C98A /* LaunchScreen.storyboard */; };
 		D589FEF1297018B30078C98A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FEF0297018B30078C98A /* MainTabBarViewController.swift */; };
 		D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59925682972E0340045B85B /* WeaponsViewController.swift */; };
+		D5D2B4D229A1B93D00854BA1 /* ArmorDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D2B4D129A1B93D00854BA1 /* ArmorDataManager.swift */; };
+		D5D2B4D429A1C9EA00854BA1 /* EquipmentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D2B4D329A1C9EA00854BA1 /* EquipmentDataManager.swift */; };
 		D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D59E9F298115E10057578D /* WeaponCell.swift */; };
 		D5D59EA329811B620057578D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D59EA229811B620057578D /* Constraints.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		D589FEEA29700FDD0078C98A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D589FEF0297018B30078C98A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		D59925682972E0340045B85B /* WeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsViewController.swift; sourceTree = "<group>"; };
+		D5D2B4D129A1B93D00854BA1 /* ArmorDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorDataManager.swift; sourceTree = "<group>"; };
+		D5D2B4D329A1C9EA00854BA1 /* EquipmentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDataManager.swift; sourceTree = "<group>"; };
 		D5D59E9F298115E10057578D /* WeaponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCell.swift; sourceTree = "<group>"; };
 		D5D59EA229811B620057578D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */,
+				D5D2B4D129A1B93D00854BA1 /* ArmorDataManager.swift */,
+				D5D2B4D329A1C9EA00854BA1 /* EquipmentDataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -218,8 +224,10 @@
 				D5D59EA329811B620057578D /* Constraints.swift in Sources */,
 				D51A025729813F3D007690D5 /* Constants.swift in Sources */,
 				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
+				D5D2B4D229A1B93D00854BA1 /* ArmorDataManager.swift in Sources */,
 				D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,
+				D5D2B4D429A1C9EA00854BA1 /* EquipmentDataManager.swift in Sources */,
 				D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

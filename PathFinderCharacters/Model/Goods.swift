@@ -9,6 +9,8 @@ import Foundation
 
 struct Goods {
     let weapons: [Weapon]
+    let armor: [Armor]
+    let equipment: [Equipment]
 }
 
 struct Weapon {
@@ -47,5 +49,38 @@ struct Weapon {
         
         return weapons
     }
+}
+
+struct Armor {
+    let name: String
+    let description: String
+    let price: String
+    let modificator: String
+    let category: String
+    
+    static func getArmors() -> [Armor] {
+        let data = ArmorDataManager.shared
+        var armor = [Armor]()
+        
+        let names = data.armorName
+        let descriptions = data.armorDescription
+        let prices = data.armorPrice
+        let modificators = data.armorModificator
+        let categories = data.armorCategory
+        
+        let iterationMinimumCount = min(names.count, descriptions.count, prices.count, modificators.count, categories.count)
+        
+        for index in 0..<iterationMinimumCount {
+            let someArmor = Armor(name: names[index], description: descriptions[index], price: prices[index], modificator: modificators[index], category: categories[index])
+            armor.append(someArmor)
+        }
+        return armor
+    }
+}
+
+struct Equipment {
+    let name: String
+    let description: String
+    let price: String
 }
 
