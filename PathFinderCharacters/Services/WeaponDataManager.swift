@@ -61,7 +61,8 @@ class WeaponDataManager {
     let weaponsImage = ["sword", "sword", "sword", "sword", "sword", "sword",
                         "sword", "sword", "sword", "sword", "sword", "sword",
                         "sword", "sword", "sword", "sword", "sword", "sword",
-                        "sword", "sword", "sword", "sword", "sword"]
+                        "sword", "sword", "sword", "sword", "sword","sword",
+                        "sword", "sword" ]
     
     let weaponIsSpecial = [false, false, false, false, false, false, false,
                            false, false, false, false, false, false, true, true,

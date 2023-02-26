@@ -16,6 +16,8 @@ private let titleHeaders = ["Простое оружие", "Особое ору�
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewWeapon))
         tableView.separatorStyle = .none
         tableView.register(WeaponCell.self, forCellReuseIdentifier: WeaponCell.reuseId)
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 600
     }
 
     // MARK: - Table view data source

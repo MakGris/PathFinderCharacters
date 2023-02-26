@@ -82,5 +82,19 @@ struct Equipment {
     let name: String
     let description: String
     let price: String
+    
+    static func getEquipment() -> [Equipment] {
+        let data = EquipmentDataManager.shared
+        var equipment = [Equipment]()
+        let names = data.equipmentName
+        let descriptions = data.equipmentDescription
+        let prices = data.equipmentPrice
+        let iterationMinimumCount = min(names.count, descriptions.count, prices.count)
+        for index in 0..<iterationMinimumCount {
+            let someEquipment = Equipment(name: names[index], description: descriptions[index], price: prices[index])
+            equipment.append(someEquipment)
+        }
+        return equipment
+    }
 }
 

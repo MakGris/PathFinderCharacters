@@ -10,6 +10,7 @@
 		D51A025729813F3D007690D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A025629813F3D007690D5 /* Constants.swift */; };
 		D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB49A2976B30E007DEA79 /* Goods.swift */; };
 		D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */; };
+		D576B8AF29AAF76700E2EC87 /* ArmorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */; };
 		D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FED929700FDC0078C98A /* AppDelegate.swift */; };
 		D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FEDB29700FDC0078C98A /* SceneDelegate.swift */; };
 		D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D589FEE229700FDC0078C98A /* PathFinderCharacters.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 		D51A025629813F3D007690D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D55FB49A2976B30E007DEA79 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataManager.swift; sourceTree = "<group>"; };
+		D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorCell.swift; sourceTree = "<group>"; };
 		D589FED629700FDC0078C98A /* PathFinderCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathFinderCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589FED929700FDC0078C98A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D589FEDB29700FDC0078C98A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D5D59E9F298115E10057578D /* WeaponCell.swift */,
+				D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
 				D5D2B4D229A1B93D00854BA1 /* ArmorDataManager.swift in Sources */,
 				D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */,
+				D576B8AF29AAF76700E2EC87 /* ArmorCell.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,
 				D5D2B4D429A1C9EA00854BA1 /* EquipmentDataManager.swift in Sources */,
 				D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */,
