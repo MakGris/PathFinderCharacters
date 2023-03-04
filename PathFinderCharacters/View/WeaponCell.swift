@@ -708,20 +708,4 @@ class WeaponCell: UITableViewCell {
             equalTo: bottomHeaderLayerView.topAnchor
         ).isActive = true
     }
-    
-    private func setupTextLabelsConstraints(TextLabel: UIView, anchorView: UIView) {
-        TextLabel.leadingAnchor.constraint(
-            equalTo: anchorView.leadingAnchor
-        ).isActive = true
-        TextLabel.trailingAnchor.constraint(
-            equalTo: anchorView.trailingAnchor
-        ).isActive = true
-        TextLabel.centerXAnchor.constraint(
-            equalTo: anchorView.centerXAnchor
-        ).isActive = true
-        TextLabel.centerYAnchor.constraint(
-            equalTo: anchorView.centerYAnchor
-        ).isActive = true
-    }
-    
 }
