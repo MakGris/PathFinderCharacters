@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D51A025729813F3D007690D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A025629813F3D007690D5 /* Constants.swift */; };
+		D54CE72F29B7687A0067D9F6 /* ArmorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54CE72E29B7687A0067D9F6 /* ArmorsViewController.swift */; };
 		D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB49A2976B30E007DEA79 /* Goods.swift */; };
 		D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */; };
 		D576B8AF29AAF76700E2EC87 /* ArmorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		D51A025629813F3D007690D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D54CE72E29B7687A0067D9F6 /* ArmorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorsViewController.swift; sourceTree = "<group>"; };
 		D55FB49A2976B30E007DEA79 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataManager.swift; sourceTree = "<group>"; };
 		D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorCell.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				D589FEF0297018B30078C98A /* MainTabBarViewController.swift */,
 				D59925682972E0340045B85B /* WeaponsViewController.swift */,
+				D54CE72E29B7687A0067D9F6 /* ArmorsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				D51A025729813F3D007690D5 /* Constants.swift in Sources */,
 				D59925692972E0340045B85B /* WeaponsViewController.swift in Sources */,
 				D5D2B4D229A1B93D00854BA1 /* ArmorDataManager.swift in Sources */,
+				D54CE72F29B7687A0067D9F6 /* ArmorsViewController.swift in Sources */,
 				D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */,
 				D576B8AF29AAF76700E2EC87 /* ArmorCell.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,

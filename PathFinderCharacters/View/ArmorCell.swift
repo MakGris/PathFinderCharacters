@@ -128,6 +128,16 @@ class ArmorCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func cellSet(with armor: Armor) {
+        textLayerViewLabel.text = armor.description
+        nameViewTextLabel.text = armor.name
+        priceViewTextLabel.text = armor.price
+        typeViewTextLabel.text = armor.category
+        shieldViewTextLabel.text = armor.modificator
+//        Заглушка
+        armorImageView.image = UIImage(named: "sword")
+    }
+    
     func setupFirstLayer() {
         contentView.addSubview(firstLayerView)
         firstLayerView.fillSuperview(padding: Constants.cardInsets)
