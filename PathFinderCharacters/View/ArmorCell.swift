@@ -94,6 +94,7 @@ class ArmorCell: UITableViewCell {
     
     let shieldImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "shieldLabel")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -122,13 +123,17 @@ class ArmorCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupFirstLayer()
+        setupWeaponImageView()
+        setupTopLayerView()
+        setupTextViewLayer()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellSet(with armor: Armor) {
+    func armorCellSet(with armor: Armor) {
         textLayerViewLabel.text = armor.description
         nameViewTextLabel.text = armor.name
         priceViewTextLabel.text = armor.price

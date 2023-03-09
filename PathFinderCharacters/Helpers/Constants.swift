@@ -16,4 +16,8 @@ struct Constants {
     static let typeHeaderLabel = "тип"
     static let damageHeaderLabel = "урон"
     static let criticalDamageHeaderLabel = "крит. удар"
+    static let weaponsTitleHeadears = ["Простое оружие", "Особое оружие"]
+    static let armorTitleHeaders = ["Лёгкие доспехи", "Средние доспехи",
+                                    "Тяжелые доспехи", "Щиты"]
+    
 }

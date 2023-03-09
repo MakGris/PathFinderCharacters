@@ -9,7 +9,7 @@ import UIKit
 
 class WeaponCell: UITableViewCell {
     
-    static let reuseId = "weaponCell"
+    static let weaponReuseId = "weaponCell"
     
     //MARK: - First layer
     
@@ -319,7 +319,7 @@ class WeaponCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellSet(with weapon: Weapon) {
+    func weaponCellSet(with weapon: Weapon) {
         textLayerViewLabel.text = weapon.description
         nameViewTextLabel.text = weapon.name
         distanceViewTextLabel.text = weapon.distance
