@@ -13,7 +13,7 @@ class WeaponCell: UITableViewCell {
     
     //MARK: - First layer
     
-    let firstLayerView: UIView = {
+    private let firstLayerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.borderWidth = 1
@@ -24,7 +24,7 @@ class WeaponCell: UITableViewCell {
     
     //MARK: - Image layer
     
-    let weaponImageView: UIImageView = {
+    private let weaponImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         imageView.layer.borderWidth = 1
@@ -35,7 +35,7 @@ class WeaponCell: UITableViewCell {
     
     //    MARK: - Text layer
     
-    let textLayerViewLabel: UILabel = {
+    private let textLayerViewLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         label.textColor = .black
@@ -47,21 +47,21 @@ class WeaponCell: UITableViewCell {
     
     //    MARK: - Top layer
     
-    let topLayerView: UIView = {
+    private let topLayerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let nameView: UIView = {
+    private let nameView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let nameViewTextLabel: UILabel = {
+    private let nameViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.textColor = .white
@@ -71,14 +71,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let distanceHeaderView: UIView = {
+    private let distanceHeaderView: UIView = {
         let view = UIView()
         view.backgroundColor = .orange
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let distanceHeaderViewTextLabel: UILabel = {
+    private let distanceHeaderViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
@@ -89,14 +89,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let distanceView: UIView = {
+    private let distanceView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let distanceViewTextLabel: UILabel = {
+    private let distanceViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         label.textColor = .white
@@ -108,21 +108,21 @@ class WeaponCell: UITableViewCell {
     
     //    MARK: - Bottom layer
     
-    let bottomLayerView: UIView = {
+    private let bottomLayerView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let priceView: UIView = {
+    private let priceView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let priceViewTextLabel: UILabel = {
+    private let priceViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .black
@@ -132,14 +132,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let gripView: UIView = {
+    private let gripView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let gripViewTextLabel: UILabel = {
+    private let gripViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .black
@@ -149,14 +149,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let typeView: UIView = {
+    private let typeView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let typeViewTextLabel: UILabel = {
+    private let typeViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .black
@@ -166,14 +166,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let damageView: UIView = {
+    private let damageView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let damageViewTextLabel: UILabel = {
+    private let damageViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .black
@@ -183,14 +183,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let criticalDamageView: UIView = {
+    private let criticalDamageView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let criticalDamageViewTextLabel: UILabel = {
+    private let criticalDamageViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .black
@@ -202,21 +202,21 @@ class WeaponCell: UITableViewCell {
     
     //    MARK: - Bottom Header layer
     
-    let bottomHeaderLayerView: UIView = {
+    private let bottomHeaderLayerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let priceHeaderView: UIView = {
+    private let priceHeaderView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let priceHeaderViewTextLabel: UILabel = {
+    private let priceHeaderViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
@@ -227,14 +227,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let gripHeaderView: UIView = {
+    private let gripHeaderView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let gripHeaderViewTextLabel: UILabel = {
+    private let gripHeaderViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
@@ -245,14 +245,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let typeHeaderView: UIView = {
+    private let typeHeaderView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let typeHeaderViewTextLabel: UILabel = {
+    private let typeHeaderViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
@@ -263,14 +263,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let damageHeaderView: UIView = {
+    private let damageHeaderView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let damageHeaderViewTextLabel: UILabel = {
+    private let damageHeaderViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
@@ -281,14 +281,14 @@ class WeaponCell: UITableViewCell {
         return label
     }()
     
-    let criticalDamageHeaderView: UIView = {
+    private let criticalDamageHeaderView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let criticalDamageHeaderViewTextLabel: UILabel = {
+    private let criticalDamageHeaderViewTextLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
@@ -331,14 +331,14 @@ class WeaponCell: UITableViewCell {
         weaponImageView.image = UIImage(named: weapon.picture)
     }
     
-    func setupFirstLayerView() {
+    private func setupFirstLayerView() {
         contentView.addSubview(firstLayerView)
         firstLayerView.fillSuperview(padding: Constants.cardInsets)
         firstLayerView.layer.cornerRadius = 10
         firstLayerView.clipsToBounds = true
     }
     
-    func setupWeaponImageView() {
+    private func setupWeaponImageView() {
         firstLayerView.addSubview(weaponImageView)
         weaponImageView.topAnchor.constraint(
             equalTo: firstLayerView.topAnchor
@@ -355,7 +355,7 @@ class WeaponCell: UITableViewCell {
         ).isActive = true
     }
     
-    func setupTopLayerView() {
+    private func setupTopLayerView() {
         firstLayerView.addSubview(topLayerView)
         topLayerView.addSubview(nameView)
         nameView.addSubview(nameViewTextLabel)
@@ -436,7 +436,7 @@ class WeaponCell: UITableViewCell {
         )
     }
     
-    func setupBottomLayerView() {
+    private func setupBottomLayerView() {
         firstLayerView.addSubview(bottomLayerView)
         bottomLayerView.addSubview(priceView)
         priceView.addSubview(priceViewTextLabel)
@@ -564,7 +564,7 @@ class WeaponCell: UITableViewCell {
         
     }
     
-    func setupBottomHeaderlayerView() {
+    private func setupBottomHeaderlayerView() {
         firstLayerView.addSubview(bottomHeaderLayerView)
         bottomHeaderLayerView.addSubview(priceHeaderView)
         priceHeaderView.addSubview(priceHeaderViewTextLabel)
@@ -691,7 +691,7 @@ class WeaponCell: UITableViewCell {
         )
     }
     
-    func setupTextViewLayer() {
+    private func setupTextViewLayer() {
         firstLayerView.addSubview(textLayerViewLabel)
         textLayerViewLabel.leadingAnchor.constraint(
             equalTo: weaponImageView.trailingAnchor,
