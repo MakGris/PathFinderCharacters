@@ -27,6 +27,15 @@ class ArmorsViewController: UITableViewController {
         return Constants.armorTitleHeaders[section]
 
     }
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        var content = header.defaultContentConfiguration()
+        content.text = Constants.armorTitleHeaders[section]
+        content.textProperties.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 22) ?? UIFont.systemFont(ofSize: 20)
+        content.textProperties.color = UIColor.black
+        header.contentConfiguration = content
+        
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:

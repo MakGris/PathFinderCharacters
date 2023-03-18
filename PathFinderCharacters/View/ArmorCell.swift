@@ -27,7 +27,12 @@ class ArmorCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         imageView.layer.borderWidth = 1
-        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.layer.borderColor = UIColor(
+            red: 83/255,
+            green: 104/255,
+            blue: 120/255,
+            alpha: 1
+        ).cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

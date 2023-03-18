@@ -30,6 +30,17 @@ class WeaponsViewController: UITableViewController {
         return Constants.weaponsTitleHeadears[section]
 
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        var content = header.defaultContentConfiguration()
+        content.text = Constants.weaponsTitleHeadears[section]
+        content.textProperties.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 22) ?? UIFont.systemFont(ofSize: 20)
+        content.textProperties.color = UIColor.black
+        header.contentConfiguration = content
+        
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -61,7 +72,6 @@ class WeaponsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         200
     }
-
 }
 extension WeaponsViewController {
     @objc func addNewWeapon() {
