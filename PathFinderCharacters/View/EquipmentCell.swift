@@ -1,15 +1,15 @@
 //
-//  ArmorCell.swift
+//  EquipmentCell.swift
 //  PathFinderCharacters
 //
-//  Created by Maksim Grischenko on 26.02.2023.
+//  Created by Maksim Grischenko on 22.03.2023.
 //
 
 import UIKit
 
-class ArmorCell: UITableViewCell {
+class EquipmentCell: UITableViewCell {
     
-    static let armorReuseId = "armorCell"
+    static let equipmentReuseId = "equipmentCell"
     
     //MARK: - First layer
     private let firstLayerView: UIView = {
@@ -17,9 +17,9 @@ class ArmorCell: UITableViewCell {
         view.backgroundColor = .white
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor(
-            red: 83/255,
-            green: 104/255,
-            blue: 120/255,
+            red: 139/255,
+            green: 69/255,
+            blue: 19/255,
             alpha: 1
         ).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -28,20 +28,19 @@ class ArmorCell: UITableViewCell {
     
     //MARK: - Image layer
     
-    private let armorImageView: UIImageView = {
+    private let equipmentImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor(
-            red: 83/255,
-            green: 104/255,
-            blue: 120/255,
+            red: 139/255,
+            green: 69/255,
+            blue: 19/255,
             alpha: 1
         ).cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     //MARK: - Top layer
     
     private let topLayerView: UIView = {
@@ -54,9 +53,9 @@ class ArmorCell: UITableViewCell {
     private let nameView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(
-            red: 83/255,
-            green: 104/255,
-            blue: 120/255,
+            red: 139/255,
+            green: 69/255,
+            blue: 19/255,
             alpha: 1
         )
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -82,42 +81,8 @@ class ArmorCell: UITableViewCell {
     
     private let priceViewTextLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
-        label.textColor = .black
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let typeView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private let typeViewTextLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.textColor = .white
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let shieldImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "shieldLabel")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    private let shieldViewTextLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -139,7 +104,7 @@ class ArmorCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupFirstLayer()
-        setupWeaponImageView()
+        setupEquipmentImageView()
         setupTopLayerView()
         setupTextViewLayer()
     }
@@ -148,14 +113,12 @@ class ArmorCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func armorCellSet(with armor: Armor) {
-        textLayerViewLabel.text = armor.description
-        nameViewTextLabel.text = armor.name
-        priceViewTextLabel.text = armor.price
-        typeViewTextLabel.text = armor.category
-        shieldViewTextLabel.text = armor.modificator
+    func equipmentCellSet(with equipment: Equipment) {
+        textLayerViewLabel.text = equipment.description
+        nameViewTextLabel.text = equipment.name
+        priceViewTextLabel.text = equipment.price
 //        Заглушка
-        armorImageView.image = UIImage(named: "sword")
+        equipmentImageView.image = UIImage(named: "sword")
     }
     
     private func setupFirstLayer() {
@@ -165,18 +128,18 @@ class ArmorCell: UITableViewCell {
         firstLayerView.clipsToBounds = true
     }
     
-    private func setupWeaponImageView() {
-        firstLayerView.addSubview(armorImageView)
-        armorImageView.topAnchor.constraint(
+    private func setupEquipmentImageView() {
+        firstLayerView.addSubview(equipmentImageView)
+        equipmentImageView.topAnchor.constraint(
             equalTo: firstLayerView.topAnchor
         ).isActive = true
-        armorImageView.leadingAnchor.constraint(
+        equipmentImageView.leadingAnchor.constraint(
             equalTo: firstLayerView.leadingAnchor)
         .isActive = true
-        armorImageView.heightAnchor.constraint(
+        equipmentImageView.heightAnchor.constraint(
             equalTo: firstLayerView.heightAnchor
         ).isActive = true
-        armorImageView.widthAnchor.constraint(
+        equipmentImageView.widthAnchor.constraint(
             equalTo: firstLayerView.widthAnchor,
             multiplier: 1 / 4
         ).isActive = true
@@ -188,7 +151,7 @@ class ArmorCell: UITableViewCell {
             equalTo: firstLayerView.topAnchor
         ).isActive = true
         topLayerView.leadingAnchor.constraint(
-            equalTo: armorImageView.trailingAnchor
+            equalTo: equipmentImageView.trailingAnchor
         ).isActive = true
         topLayerView.trailingAnchor.constraint(
             equalTo: firstLayerView.trailingAnchor
@@ -211,7 +174,7 @@ class ArmorCell: UITableViewCell {
         ).isActive = true
         nameView.widthAnchor.constraint(
             equalTo: topLayerView.widthAnchor,
-            multiplier: 0.6
+            multiplier: 2 / 3
         ).isActive = true
         
         setupTextLabelsConstraints(
@@ -225,8 +188,7 @@ class ArmorCell: UITableViewCell {
             equalTo: topLayerView.topAnchor
         ).isActive = true
         priceView.heightAnchor.constraint(
-            equalTo: topLayerView.heightAnchor,
-            multiplier: 1 / 2
+            equalTo: topLayerView.heightAnchor
         ).isActive = true
         priceView.leadingAnchor.constraint(
             equalTo: nameView.trailingAnchor,
@@ -234,61 +196,19 @@ class ArmorCell: UITableViewCell {
         ).isActive = true
         priceView.widthAnchor.constraint(
             equalTo: topLayerView.widthAnchor,
-            multiplier: 0.2
+            multiplier: 1 / 3
         ).isActive = true
         
         setupTextLabelsConstraints(
             TextLabel: priceViewTextLabel,
             anchorView: priceView
         )
-        
-        topLayerView.addSubview(typeView)
-        typeView.addSubview(typeViewTextLabel)
-        typeView.topAnchor.constraint(
-            equalTo: priceView.bottomAnchor
-        ).isActive = true
-        typeView.heightAnchor.constraint(
-            equalTo: priceView.heightAnchor
-        ).isActive = true
-        typeView.leadingAnchor.constraint(
-            equalTo: priceView.leadingAnchor
-        ).isActive = true
-        typeView.widthAnchor.constraint(
-            equalTo: priceView.widthAnchor
-        ).isActive = true
-        setupTextLabelsConstraints(
-            TextLabel: typeViewTextLabel,
-            anchorView: typeView
-        )
-        
-        
-        topLayerView.addSubview(shieldImageView)
-        shieldImageView.addSubview(shieldViewTextLabel)
-        shieldImageView.leadingAnchor.constraint(
-            equalTo: priceView.trailingAnchor,
-            constant: 1
-        ).isActive = true
-//        shieldImageView.leadingAnchor.constraint(
-//            equalTo: priceView.trailingAnchor
-//        ).isActive = true
-        shieldImageView.trailingAnchor.constraint(
-            equalTo: topLayerView.trailingAnchor
-        ).isActive = true
-        shieldImageView.heightAnchor.constraint(
-            equalTo: topLayerView.heightAnchor
-        ).isActive = true
-        setupTextLabelsConstraints(
-            TextLabel: shieldViewTextLabel,
-            anchorView: shieldImageView
-        )
-        
-        
     }
     
     private func setupTextViewLayer() {
         firstLayerView.addSubview(textLayerViewLabel)
         textLayerViewLabel.leadingAnchor.constraint(
-            equalTo: armorImageView.trailingAnchor,
+            equalTo: equipmentImageView.trailingAnchor,
             constant: 5
         ).isActive = true
         textLayerViewLabel.trailingAnchor.constraint(
@@ -302,5 +222,5 @@ class ArmorCell: UITableViewCell {
             equalTo: firstLayerView.bottomAnchor
         ).isActive = true
     }
-}
 
+}
