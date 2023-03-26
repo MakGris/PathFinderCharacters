@@ -25,6 +25,7 @@
 		D5D2B4D429A1C9EA00854BA1 /* EquipmentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D2B4D329A1C9EA00854BA1 /* EquipmentDataManager.swift */; };
 		D5D59EA0298115E10057578D /* WeaponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D59E9F298115E10057578D /* WeaponCell.swift */; };
 		D5D59EA329811B620057578D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D59EA229811B620057578D /* Constraints.swift */; };
+		D5E79D8329D092F300EC416E /* AddEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E79D8229D092F300EC416E /* AddEquipmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D5D2B4D329A1C9EA00854BA1 /* EquipmentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDataManager.swift; sourceTree = "<group>"; };
 		D5D59E9F298115E10057578D /* WeaponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponCell.swift; sourceTree = "<group>"; };
 		D5D59EA229811B620057578D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		D5E79D8229D092F300EC416E /* AddEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEquipmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D59925682972E0340045B85B /* WeaponsViewController.swift */,
 				D54CE72E29B7687A0067D9F6 /* ArmorsViewController.swift */,
 				D536E0D829C5759000725CAE /* EquipmentViewController.swift */,
+				D5E79D8229D092F300EC416E /* AddEquipmentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D589FEF1297018B30078C98A /* MainTabBarViewController.swift in Sources */,
+				D5E79D8329D092F300EC416E /* AddEquipmentViewController.swift in Sources */,
 				D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */,
 				D589FEE429700FDC0078C98A /* PathFinderCharacters.xcdatamodeld in Sources */,
 				D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */,

@@ -10,7 +10,6 @@ import UIKit
 class EquipmentCell: UITableViewCell {
     
     static let equipmentReuseId = "equipmentCell"
-    
     //MARK: - First layer
     private let firstLayerView: UIView = {
         let view = UIView()

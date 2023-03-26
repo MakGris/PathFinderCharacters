@@ -75,6 +75,7 @@ class WeaponsViewController: UITableViewController {
 }
 extension WeaponsViewController {
     @objc func addNewWeapon() {
-        
+        let vc = AddEquipmentViewController()
+        present(vc, animated: true)
     }
 }
