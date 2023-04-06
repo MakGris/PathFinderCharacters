@@ -96,12 +96,34 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     }()
     
     
+//    MARK: - Bottom layer
+    private let bottomLayerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .yellow
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+//    MARK: - Button
+    
+    private let saveButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.setTitle("Save", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        button.addTarget(button.self, action: #selector(addNewEquipment), for:.touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFirstLayer()
         setupEquipmentImageView()
         setupTopLayerView()
+//        setupSaveButtonView()
         setupTextViewLayer()
+        setupBottomLayer()
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.isFirstResponder && textView.textColor == .lightGray {
@@ -217,8 +239,9 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         descriptionTextView.topAnchor.constraint(
             equalTo: topLayerView.bottomAnchor
         ).isActive = true
-        descriptionTextView.bottomAnchor.constraint(
-            equalTo: firstLayerView.bottomAnchor
+        descriptionTextView.heightAnchor.constraint(
+            equalTo: firstLayerView.heightAnchor,
+            multiplier: 1 / 3
         ).isActive = true
         descriptionTextView.textColor = .lightGray
         descriptionTextView.font = UIFont.systemFont(ofSize: 13, weight: .medium)
@@ -227,10 +250,22 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         descriptionTextView.delegate = self
     }
     
+    private func setupBottomLayer() {
+        firstLayerView.addSubview(bottomLayerView)
+        bottomLayerView.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor).isActive = true
+        bottomLayerView.leadingAnchor.constraint(equalTo: equipmentImageView.trailingAnchor).isActive = true
+        bottomLayerView.trailingAnchor.constraint(equalTo: firstLayerView.trailingAnchor).isActive = true
+        bottomLayerView.bottomAnchor.constraint(equalTo: firstLayerView.bottomAnchor).isActive = true
+    }
 //    func textViewDidBeginEditing (textView: UITextView) {
 //        if textView.isFirstResponder {
 //            textView.text = nil
 //            textView.textColor = .black
 //        }
 //    }
+}
+extension AddEquipmentViewController {
+    @objc func addNewEquipment() {
+        
+    }
 }
