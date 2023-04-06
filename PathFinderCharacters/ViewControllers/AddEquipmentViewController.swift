@@ -105,13 +105,13 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     }()
 //    MARK: - Button
     
-    private let saveButton: UIButton = {
+    private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
         button.setTitle("Save", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        button.addTarget(button.self, action: #selector(addNewEquipment), for:.touchUpInside)
+        button.addTarget(self, action: #selector(addNewEquipment), for:.touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -252,10 +252,15 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     private func setupBottomLayer() {
         firstLayerView.addSubview(bottomLayerView)
+        bottomLayerView.addSubview(saveButton)
         bottomLayerView.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor).isActive = true
         bottomLayerView.leadingAnchor.constraint(equalTo: equipmentImageView.trailingAnchor).isActive = true
         bottomLayerView.trailingAnchor.constraint(equalTo: firstLayerView.trailingAnchor).isActive = true
         bottomLayerView.bottomAnchor.constraint(equalTo: firstLayerView.bottomAnchor).isActive = true
+        saveButton.centerXAnchor.constraint(equalTo: bottomLayerView.centerXAnchor).isActive = true
+        saveButton.centerYAnchor.constraint(equalTo: bottomLayerView.centerYAnchor).isActive = true
+        saveButton.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 1 / 4).isActive = true
+        saveButton.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 1 / 4).isActive = true
     }
 //    func textViewDidBeginEditing (textView: UITextView) {
 //        if textView.isFirstResponder {
@@ -266,6 +271,6 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
 }
 extension AddEquipmentViewController {
     @objc func addNewEquipment() {
-        
+        print("hello")
     }
 }
