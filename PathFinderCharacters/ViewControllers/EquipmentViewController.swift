@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddEquipmentDelegate: AnyObject {
+    func addEquipment(equipment: Equipment)
+}
+
 class EquipmentViewController: UITableViewController {
     
     private var equipment = Equipment.getEquipment()
@@ -46,6 +50,16 @@ class EquipmentViewController: UITableViewController {
 extension EquipmentViewController {
     @objc func addNewEquipment() {
         let vc = AddEquipmentViewController()
+        vc.delegate = self
         present(vc, animated: true)
     }
+}
+
+extension EquipmentViewController: AddEquipmentDelegate {
+    func addEquipment(equipment: Equipment) {
+        self.equipment.append(equipment)
+        tableView.reloadData()
+    }
+    
+    
 }

@@ -9,6 +9,9 @@ import UIKit
 
 class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
+    weak var delegate: AddEquipmentDelegate!
+    var equipment: Equipment!
+    
     //MARK: - First layer
     private let firstLayerView: UIView = {
         let view = UIView()
@@ -262,15 +265,38 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         saveButton.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 1 / 4).isActive = true
         saveButton.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 1 / 4).isActive = true
     }
-//    func textViewDidBeginEditing (textView: UITextView) {
-//        if textView.isFirstResponder {
-//            textView.text = nil
-//            textView.textColor = .black
-//        }
-//    }
 }
 extension AddEquipmentViewController {
     @objc func addNewEquipment() {
-        print("hello")
+        guard let name = nameViewTextField.text else { return }
+        if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showAlert(with: "Не введено название снаряжения", and: "Введите название и попробуйте снова")
+        }
+        
+        guard let price = priceViewTextField.text else { return }
+        if price.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showAlert(with: "Не введена стоимость снаряжения", and: "Введите стоимость и попробуйте снова")
+        }
+        guard let description = descriptionTextView.text else { return }
+        if description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showAlert(with: "Не введено описание снаряжения", and: "Введите описание и попробуйте снова")
+        }
+        if !name.isEmpty && !price.isEmpty && description.isEmpty {
+        equipment = Equipment(name: name, description: description , price: price)
+            self.delegate.addEquipment(equipment: equipment)
+        }
+    }
+    
+    private func showAlert(with title: String, and message: String) {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            alertController.dismiss(animated: true)
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
     }
 }
