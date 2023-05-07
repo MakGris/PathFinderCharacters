@@ -31,7 +31,14 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     private let equipmentImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+//        imageView.backgroundColor = .red
+        imageView.image = UIImage(systemName: "photo.on.rectangle")?.withTintColor(UIColor(
+            red: 214/255,
+            green: 186/255,
+            blue: 115/255,
+            alpha: 1
+        ), renderingMode: .alwaysOriginal)
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor(
             red: 139/255,
@@ -68,6 +75,13 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         textField.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         textField.textColor = .white
         textField.textAlignment = .center
+//        custom color for placeholder
+//        textField.attributedPlaceholder = NSAttributedString(string: "Введите имя", attributes: [NSAttributedString.Key.foregroundColor : UIColor(
+//            red: 86/255,
+//            green: 73/255,
+//            blue: 76/255,
+//            alpha: 1
+//        )])
         textField.placeholder = "Введите имя"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -82,7 +96,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     private let priceViewTextField: UITextField = {
         let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        textField.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         textField.textColor = .white
         textField.textAlignment = .center
         textField.placeholder = "Введите цену"
@@ -102,7 +116,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
 //    MARK: - Bottom layer
     private let bottomLayerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .yellow
+//        view.backgroundColor = .yellow
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -110,12 +124,26 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .blue
-        button.setTitle("Save", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(
+            red: 214/255,
+            green: 186/255,
+            blue: 115/255,
+            alpha: 1
+        )
+        button.setTitle("Добавить", for: .normal)
+        button.setTitleColor(UIColor(
+            red: 86/255,
+            green: 73/255,
+            blue: 76/255,
+            alpha: 1
+        ),
+        for: .normal
+        )
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         button.addTarget(self, action: #selector(addNewEquipment), for:.touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -262,8 +290,9 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         bottomLayerView.bottomAnchor.constraint(equalTo: firstLayerView.bottomAnchor).isActive = true
         saveButton.centerXAnchor.constraint(equalTo: bottomLayerView.centerXAnchor).isActive = true
         saveButton.centerYAnchor.constraint(equalTo: bottomLayerView.centerYAnchor).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: bottomLayerView.widthAnchor, multiplier: 1 / 4).isActive = true
-        saveButton.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 1 / 4).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        saveButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
+//        saveButton.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 1 / 4).isActive = true
     }
 }
 extension AddEquipmentViewController {

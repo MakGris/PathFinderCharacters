@@ -10,7 +10,6 @@ import UIKit
 class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         viewControllers = [generateViewController(viewController: WeaponsViewController(), image: UIImage(named: "axes")!, title: "Оружие"), generateViewController(viewController: ArmorsViewController(), image: UIImage(named: "armor")!, title: "Броня"), generateViewController(viewController: EquipmentViewController(), image: UIImage(named: "bag")!, title: "Снаряжение")]
         // Do any additional setup after loading the view.
     }
