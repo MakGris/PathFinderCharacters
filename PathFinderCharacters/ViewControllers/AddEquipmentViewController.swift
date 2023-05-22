@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddEquipmentViewController: UIViewController, UITextViewDelegate {
+class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     weak var delegate: AddEquipmentDelegate!
     var equipment: Equipment!
@@ -31,7 +31,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     private let equipmentImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.backgroundColor = .red
+        //        imageView.backgroundColor = .red
         imageView.image = UIImage(systemName: "photo.on.rectangle")?.withTintColor(UIColor(
             red: 214/255,
             green: 186/255,
@@ -75,14 +75,15 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         textField.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         textField.textColor = .white
         textField.textAlignment = .center
-//        custom color for placeholder
-//        textField.attributedPlaceholder = NSAttributedString(string: "Введите имя", attributes: [NSAttributedString.Key.foregroundColor : UIColor(
-//            red: 86/255,
-//            green: 73/255,
-//            blue: 76/255,
-//            alpha: 1
-//        )])
+        //        custom color for placeholder
+        //        textField.attributedPlaceholder = NSAttributedString(string: "Введите имя", attributes: [NSAttributedString.Key.foregroundColor : UIColor(
+        //            red: 86/255,
+        //            green: 73/255,
+        //            blue: 76/255,
+        //            alpha: 1
+        //        )])
         textField.placeholder = "Введите имя"
+        textField.returnKeyType = .next
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -100,6 +101,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         textField.textColor = .white
         textField.textAlignment = .center
         textField.placeholder = "Введите цену"
+        textField.returnKeyType = .next
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -108,19 +110,20 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     private let descriptionTextView: UITextView = {
         let textView = UITextView()
+        textView.returnKeyType = .done
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
     
     
-//    MARK: - Bottom layer
+    //    MARK: - Bottom layer
     private let bottomLayerView: UIView = {
         let view = UIView()
-//        view.backgroundColor = .yellow
+        //        view.backgroundColor = .yellow
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-//    MARK: - Button
+    //    MARK: - Button
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
@@ -137,7 +140,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
             blue: 76/255,
             alpha: 1
         ),
-        for: .normal
+                             for: .normal
         )
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         button.addTarget(self, action: #selector(addNewEquipment), for:.touchUpInside)
@@ -152,10 +155,14 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         setupFirstLayer()
         setupEquipmentImageView()
         setupTopLayerView()
-//        setupSaveButtonView()
         setupTextViewLayer()
         setupBottomLayer()
+        priceViewTextField.delegate = self
+        nameViewTextField.delegate = self
+        descriptionTextView.delegate = self
     }
+    
+    // MARK: - PlaceHolder TextView
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.isFirstResponder && textView.textColor == .lightGray {
             textView.text = nil
@@ -165,9 +172,32 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty || textView.text == "" {
-                textView.textColor = .lightGray
-                textView.text = "Введите описание снаряжения..."
-            }
+            textView.textColor = .lightGray
+            textView.text = "Введите описание снаряжения..."
+        }
+    }
+    // MARK: - Dismiss keyboard by tap outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - Next Textfield by pressing return button
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameViewTextField {
+            priceViewTextField.becomeFirstResponder()
+        } else {
+            descriptionTextView.becomeFirstResponder()
+        }
+        return true
+    }
+    // MARK: - Dismiss keyboard by done button in textView
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     private func setupFirstLayer() {
         view.addSubview(firstLayerView)
@@ -292,9 +322,10 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate {
         saveButton.centerYAnchor.constraint(equalTo: bottomLayerView.centerYAnchor).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         saveButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
-//        saveButton.heightAnchor.constraint(equalTo: bottomLayerView.heightAnchor, multiplier: 1 / 4).isActive = true
     }
 }
+
+
 extension AddEquipmentViewController {
     @objc func addNewEquipment() {
         guard let name = nameViewTextField.text else { return }
@@ -311,7 +342,7 @@ extension AddEquipmentViewController {
             showAlert(with: "Не введено описание снаряжения", and: "Введите описание и попробуйте снова")
         }
         if !name.isEmpty && !price.isEmpty && description.isEmpty {
-        equipment = Equipment(name: name, description: description , price: price)
+            equipment = Equipment(name: name, description: description , price: price)
             self.delegate.addEquipment(equipment: equipment)
         }
     }
