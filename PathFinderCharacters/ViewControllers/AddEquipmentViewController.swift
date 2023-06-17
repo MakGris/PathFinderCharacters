@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import PhotosUI
 
-class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, PHPickerViewControllerDelegate {
     
     weak var delegate: AddEquipmentDelegate!
     var equipment: Equipment!
@@ -38,6 +39,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
             blue: 115/255,
             alpha: 1
         ), renderingMode: .alwaysOriginal)
+//        Отвечает за отображение картинки во вью, сейчас картинка сжимается, чтобы поместиться
         imageView.contentMode = .scaleAspectFit
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor(
@@ -49,6 +51,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
     //MARK: - Top layer
     
     private let topLayerView: UIView = {
@@ -123,7 +126,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    //    MARK: - Button
+    //    MARK: - Buttons
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
@@ -140,13 +143,21 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
             blue: 76/255,
             alpha: 1
         ),
-                             for: .normal
+        for: .normal
         )
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         button.addTarget(self, action: #selector(addNewEquipment), for:.touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
+        return button
+    }()
+    
+    private lazy var imagePickerButton: UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(addNewPicture), for:.touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -212,6 +223,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
     
     private func setupEquipmentImageView() {
         firstLayerView.addSubview(equipmentImageView)
+        firstLayerView.addSubview(imagePickerButton)
         equipmentImageView.topAnchor.constraint(
             equalTo: firstLayerView.topAnchor
         ).isActive = true
@@ -224,6 +236,12 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
         equipmentImageView.widthAnchor.constraint(
             equalTo: firstLayerView.widthAnchor,
             multiplier: 1 / 4
+        ).isActive = true
+        imagePickerButton.heightAnchor.constraint(
+            equalTo: equipmentImageView.heightAnchor
+        ).isActive = true
+        imagePickerButton.widthAnchor.constraint(
+            equalTo: equipmentImageView.widthAnchor
         ).isActive = true
     }
     
@@ -327,6 +345,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
 
 
 extension AddEquipmentViewController {
+    
     @objc func addNewEquipment() {
         guard let name = nameViewTextField.text else { return }
         if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -341,9 +360,37 @@ extension AddEquipmentViewController {
         if description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             showAlert(with: "Не введено описание снаряжения", and: "Введите описание и попробуйте снова")
         }
-        if !name.isEmpty && !price.isEmpty && description.isEmpty {
+        if !name.isEmpty && !price.isEmpty && !description.isEmpty {
             equipment = Equipment(name: name, description: description , price: price)
             self.delegate.addEquipment(equipment: equipment)
+            dismiss(animated: true)
+        }
+    }
+    
+    @objc func addNewPicture() {
+       presentPickerView()
+    }
+
+    func presentPickerView() {
+        var configuration = PHPickerConfiguration()
+        configuration.filter = PHPickerFilter.images
+        configuration.selectionLimit = 1
+
+        let photoPicker = PHPickerViewController(configuration: configuration)
+        photoPicker.delegate = self
+        self.present(photoPicker, animated: true)
+    }
+
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true)
+        for item in results {
+            item.itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                if let image = image as? UIImage {
+                    DispatchQueue.main.async {
+                        self.equipmentImageView.image = image
+                    }
+                }
+            }
         }
     }
     
