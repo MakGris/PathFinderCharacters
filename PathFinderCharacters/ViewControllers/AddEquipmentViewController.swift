@@ -148,8 +148,12 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         button.addTarget(self, action: #selector(addNewEquipment), for:.touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.masksToBounds = true
+        button.layer.masksToBounds = false
         button.layer.cornerRadius = 10
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        button.layer.shadowRadius = 2.0
+        button.layer.shadowOpacity = 0.5
         return button
     }()
     
@@ -347,6 +351,7 @@ class AddEquipmentViewController: UIViewController, UITextViewDelegate, UITextFi
 extension AddEquipmentViewController {
     
     @objc func addNewEquipment() {
+        saveButton.pulsate()
         guard let name = nameViewTextField.text else { return }
         if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             showAlert(with: "Не введено название снаряжения", and: "Введите название и попробуйте снова")

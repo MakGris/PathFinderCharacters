@@ -12,6 +12,7 @@
 		D54CE72F29B7687A0067D9F6 /* ArmorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54CE72E29B7687A0067D9F6 /* ArmorsViewController.swift */; };
 		D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB49A2976B30E007DEA79 /* Goods.swift */; };
 		D55FB4A12976B713007DEA79 /* WeaponDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */; };
+		D5637AE02A3EE79B00700500 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5637ADF2A3EE79B00700500 /* UIButtonExtensions.swift */; };
 		D576B8AF29AAF76700E2EC87 /* ArmorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */; };
 		D582822829CAEDE6009BFA4D /* EquipmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582822729CAEDE6009BFA4D /* EquipmentCell.swift */; };
 		D589FEDA29700FDC0078C98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589FED929700FDC0078C98A /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		D54CE72E29B7687A0067D9F6 /* ArmorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorsViewController.swift; sourceTree = "<group>"; };
 		D55FB49A2976B30E007DEA79 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		D55FB4A02976B713007DEA79 /* WeaponDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDataManager.swift; sourceTree = "<group>"; };
+		D5637ADF2A3EE79B00700500 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		D576B8AE29AAF76700E2EC87 /* ArmorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorCell.swift; sourceTree = "<group>"; };
 		D582822729CAEDE6009BFA4D /* EquipmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCell.swift; sourceTree = "<group>"; };
 		D589FED629700FDC0078C98A /* PathFinderCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathFinderCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 			children = (
 				D5D59EA229811B620057578D /* Constraints.swift */,
 				D51A025629813F3D007690D5 /* Constants.swift */,
+				D5637ADF2A3EE79B00700500 /* UIButtonExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				D576B8AF29AAF76700E2EC87 /* ArmorCell.swift in Sources */,
 				D55FB49B2976B30E007DEA79 /* Goods.swift in Sources */,
 				D5D2B4D429A1C9EA00854BA1 /* EquipmentDataManager.swift in Sources */,
+				D5637AE02A3EE79B00700500 /* UIButtonExtensions.swift in Sources */,
 				D589FEDC29700FDC0078C98A /* SceneDelegate.swift in Sources */,
 				D536E0D929C5759000725CAE /* EquipmentViewController.swift in Sources */,
 			);
